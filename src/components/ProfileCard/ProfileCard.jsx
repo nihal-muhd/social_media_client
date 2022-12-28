@@ -43,7 +43,7 @@ const ProfileCard = ({ location }) => {
     data.append('upload_preset', 'weshare_images')
     axiosImage.post('/image/upload', data).then((res) => {
       profileData.profileurl = res.data.secure_url
-      axios.post('https://we-share.club/profile-picture', { profileData }, { withCredentials: true })
+      axios.post('https://we-share.club/profile-picture', { profileData })
       setCoverPic(null)
     })
   }
@@ -59,7 +59,7 @@ const ProfileCard = ({ location }) => {
     data.append('upload_preset', 'weshare_images')
     axiosImage.post('/image/upload', data).then((res) => {
       profileData.coverurl = res.data.secure_url
-      axios.post('https://we-share.club/cover-picture', { profileData }, { withCredentials: true })
+      axios.post('https://we-share.club/cover-picture', { profileData })
       setCoverPic(null)
     })
   }

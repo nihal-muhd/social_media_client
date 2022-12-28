@@ -46,7 +46,7 @@ const Messenger = () => {
 
   useEffect(() => {
     const getConversations = async () => {
-      const res = await axios.get('https://we-share.club/conversation/' + userId, { withCredentials: true })
+      const res = await axios.get('https://we-share.club/conversation/' + userId)
       setConversations(res.data.conversation)
     }
     getConversations()
@@ -54,7 +54,7 @@ const Messenger = () => {
 
   useEffect(() => {
     const getMessages = async () => {
-      const res = await axios.get('https://we-share.club/message/' + currentChat?._id, { withCredentials: true })
+      const res = await axios.get('https://we-share.club/message/' + currentChat?._id)
       setMessages(res.data.messages)
     }
     getMessages()
@@ -76,7 +76,7 @@ const Messenger = () => {
       text: newMessage
     })
 
-    const res = await axios.post('https://we-share.club/message', message, { withCredentials: true })
+    const res = await axios.post('https://we-share.club/message', message)
     setMessages([...messages, res.data.savedMessage])
     setNewMessage('')
   }

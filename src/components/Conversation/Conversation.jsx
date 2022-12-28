@@ -18,7 +18,7 @@ const Conversation = ({ conversation }) => {
     const friendId = members.find((m) => m !== userId)
 
     const getUser = async () => {
-      const res = await axios.get('https://we-share.club/get-user/' + friendId, { withCredentials: true })
+      const res = await axios.get('https://we-share.club/get-user/' + friendId)
       setFriends(res.data.user)
     }
     getUser()

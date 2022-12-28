@@ -25,16 +25,16 @@ const Post = ({ data, location, handleDelete }) => {
   const handleLike = async () => {
     setLiked((prev) => !prev)
     if (!liked) {
-      axios.post('https://we-share.club/like-post', { postId: data._id, userId: user.Id }, { withCredentials: true })
+      axios.post('https://we-share.club/like-post', { postId: data._id, userId: user.Id })
       setLikes((prev) => prev + 1)
     } else {
-      axios.post('https://we-share.club/unlike-post', { postId: data._id, userId: user.Id }, { withCredentials: true })
+      axios.post('https://we-share.club/unlike-post', { postId: data._id, userId: user.Id })
       setLikes((prev) => prev - 1)
     }
   }
 
   const handleComment = (postId, username, comment) => {
-    axios.post('https://we-share.club/comment-post', { postId, username, comment }, { withCredentials: true })
+    axios.post('https://we-share.club/comment-post', { postId, username, comment })
     const commentDetails = {
       postId,
       username,

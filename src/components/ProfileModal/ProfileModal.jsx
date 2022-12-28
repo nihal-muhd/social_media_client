@@ -22,7 +22,7 @@ function ProfileModal ({ modalOpen, setModalOpen }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const response = await axios.post('https://we-share.club/info-update', { formData, userId }, { withCredentials: true })
+    const response = await axios.post('https://we-share.club/info-update', { formData, userId })
     if (response.status === 201) {
       navigate('/profile/' + user.Id)
     } else {

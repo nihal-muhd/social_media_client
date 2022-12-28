@@ -9,7 +9,7 @@ const Userlist = () => {
 
   useEffect(() => {
     async function getUsers () {
-      const userData = await axios.get('https://we-share.club/admin/getUser', { withCredentials: true })
+      const userData = await axios.get('https://we-share.club/admin/getUser')
       if (userData.status === 200) {
         setUser(userData.data.users)
       } else {
@@ -20,7 +20,7 @@ const Userlist = () => {
   }, [user])
 
   const blockUser = async (userID) => {
-    const blockUser = await axios.post('https://we-share.club/admin/blockUser', { userID }, { withCredentials: true })
+    const blockUser = await axios.post('https://we-share.club/admin/blockUser', { userID })
     if (blockUser.data.blockstatus === true) {
       setUser((user) => {
         user.map((val) => {
@@ -34,7 +34,7 @@ const Userlist = () => {
   }
 
   const unblockUser = async (userID) => {
-    const unblockUser = await axios.post('https://we-share.club/admin/unblockUser', { userID }, { withCredentials: true })
+    const unblockUser = await axios.post('https://we-share.club/admin/unblockUser', { userID })
     if (unblockUser.data.unblockstatus === true) {
       setUser((user) => {
         user.map((val) => {

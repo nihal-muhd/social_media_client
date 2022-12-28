@@ -44,14 +44,14 @@ const PostShare = () => {
       data.append('upload_preset', 'weshare_images')
       axiosImage.post('/image/upload', data).then((res) => {
         newPost.imageUrl = res.data.secure_url
-        axios.post('https://we-share.club/post-upload', newPost, { withCredentials: true })
+        axios.post('https://we-share.club/post-upload', newPost)
         setImage(null)
         setLoading(false)
         desc.current.value = ''
       })
     } else {
       console.log('description only')
-      axios.post('https://we-share.club/post-upload', newPost, { withCredentials: true })
+      axios.post('https://we-share.club/post-upload', newPost)
       setLoading(false)
       desc.current.value = ''
     }
@@ -59,7 +59,7 @@ const PostShare = () => {
 
   // useEffect(() => {
   //   const getPost = async () => {
-  //     const posts = await axios.post('https://we-share.club/get-post', { userId }, { withCredentials: true })
+  //     const posts = await axios.post('https://we-share.club/get-post', { userId })
   //     console.log(posts.data.post, 'new post data')
   //     setPost(posts.data.post)
   //   }
