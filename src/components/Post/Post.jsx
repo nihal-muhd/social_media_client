@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { format } from 'timeago.js'
+// import { format } from 'timeago.js'
 import axios from 'axios'
 import TrashIcon from '@rsuite/icons/Trash'
 import SendIcon from '@rsuite/icons/Send'
@@ -76,7 +76,7 @@ const Post = ({ data, location, handleDelete }) => {
       <div className="detail">
         {/* <span><b>{data.user_name}</b></span> */}
         {/* <span> {data.desc}</span><br></br> */}
-        <span style={{ fontSize: '9px' }}> {format(data.createdAt)}</span>
+        <span style={{ fontSize: '9px' }}>1 day ago</span>
     </div>
 
     </div >

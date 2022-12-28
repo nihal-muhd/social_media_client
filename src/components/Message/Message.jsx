@@ -1,10 +1,10 @@
 import React from 'react'
 
 import profile from '../../img/defaultProfile.png'
-import { format } from 'timeago.js'
+// import timeago from 'timeago.js'
 
 import './Message.css'
-
+// const timeAgo = timeago()
 const Message = ({ message, own }) => {
   return (
         <div className={own ? 'message own' : 'message'}>
@@ -13,7 +13,7 @@ const Message = ({ message, own }) => {
                 <p className='messageText'>{message.text}</p>
 
             </div>
-            <div className="messageBottom">{format(message.createdAt)}</div>
+            <div className="messageBottom">{message.createdAt}</div>
         </div >
   )
 }
