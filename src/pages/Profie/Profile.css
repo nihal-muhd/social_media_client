@@ -1,0 +1,32 @@
+.Profile{
+    position: relative;
+    display: grid;
+    grid-template-columns: 18rem auto 20rem;
+    gap: 2rem;
+}
+
+.Profile-center{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media only screen and (max-width:1218px) {
+    .Profile{
+        grid-template-columns: 0rem auto 20rem;
+    }
+    
+}
+@media only screen and (max-width:930PX) {
+    .Profile{
+        grid-template-columns: 0rem auto 5rem;
+    }
+  
+}
+
+@media only screen and (max-width:700px) {
+    .Profile{
+        grid-template-columns: 0rem auto 0rem;
+    }
+  
+}
