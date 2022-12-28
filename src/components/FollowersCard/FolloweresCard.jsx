@@ -13,7 +13,7 @@ const FolloweresCard = () => {
 
   useEffect(() => {
     async function getUsers () {
-      const res = await axios.get('https://we-share.club/get-users')
+      const res = await axios.get('https://we-share.club/get-users', { withCredentials: true })
       const userList = res.data.users
       setUsers(userList.filter((val) => val._id !== user.Id))
     }
@@ -21,11 +21,11 @@ const FolloweresCard = () => {
   }, [])
 
   const handleFollow = (userId) => {
-    axios.post('https://we-share.club/follow-users', { userId })
+    axios.post('https://we-share.club/follow-users', { userId }, { withCredentials: true })
   }
 
   const handleUnFollow = (userId) => {
-    axios.post('https://we-share.club/unfollow-users', { userId })
+    axios.post('https://we-share.club/unfollow-users', { userId }, { withCredentials: true })
   }
 
   return (

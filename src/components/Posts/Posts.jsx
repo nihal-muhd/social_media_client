@@ -17,9 +17,9 @@ const Posts = ({ location }) => {
 
   useEffect(() => {
     const getPost = async () => {
-      const posts = await axios.post('https://we-share.club/get-post', { userId })
+      const posts = await axios.post('https://we-share.club/get-post', { userId }, { withCredentials: true })
       setPost(posts.data.post)
-      const proflepost = await axios.post('https://we-share.club/get-profilePost', { userId })
+      const proflepost = await axios.post('https://we-share.club/get-profilePost', { userId }, { withCredentials: true })
       setProfilePost(proflepost.data.mypost, 'hi mchii')
     }
     getPost()
@@ -29,7 +29,7 @@ const Posts = ({ location }) => {
     forPostDlt = post.filter((v) => v._id !== postId)
     setPost(forPostDlt)
     setProfilePost(forPostDlt)
-    await axios.post('https://we-share.club/delete-post', { postId })
+    await axios.post('https://we-share.club/delete-post', { postId }, { withCredentials: true })
   }
 
   if (!post) { <SpinnerIcon pulse style={{ fontSize: '2em' }} /> }

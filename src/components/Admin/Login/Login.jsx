@@ -26,7 +26,7 @@ const Login = () => {
     if (formData.adminId === '' || formData.password === '') {
       setError('Enter above details')
     } else {
-      const response = await axios.post('https://we-share.club/admin/login', formData)
+      const response = await axios.post('https://we-share.club//admin/login', formData, { withCredentials: true })
       if (response.status === 201) {
         navigate('/admin')
       } else {

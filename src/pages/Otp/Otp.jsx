@@ -35,7 +35,7 @@ const Otp = () => {
       setError('**invalid otp')
     } else {
       console.log(otp)
-      const data = await axios.post('https://we-share.club/verify-user', { otp, userData })
+      const data = await axios.post('https://we-share.club/verify-user', { otp, userData }, { withCredentials: true })
       if (data.status === 201) {
         toast.success('otp verified succesfully')
         navigate('/login')

@@ -2,13 +2,13 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 export const userLogin = createAsyncThunk('user/userLogin', async (formData) => {
-  const res = await axios.post('https://we-share.club/login', formData)
+  const res = await axios.post('https://we-share.club/login', formData, { withCredentials: true })
   res.data.loggedIn = true
   return res
 })
 
 export const getUserData = createAsyncThunk('user/userData', async () => {
-  const res = await axios.get('https://we-share.club/getUserData')
+  const res = await axios.get('https://we-share.club/getUserData', { withCredentials: true })
   res.data.loggedIn = true
   console.log(res.data)
   return res
