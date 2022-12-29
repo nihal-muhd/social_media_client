@@ -17,7 +17,7 @@ const Signup = () => {
   )
 }
 
-function SignupForm() {
+function SignupForm () {
   const navigate = useNavigate()
 
   const [formData, setFormData] = useState({ name: '', email: '', mobile: '', password: '', confirmPassword: '' })
